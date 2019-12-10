@@ -10,7 +10,13 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
+    <% if current_user %>
+      <%= render 'shared/user_navbar' %>
+      <%= current_user.email %>
+    <% else  %>
+      <%= render 'shared/navbar' %>
+
+    <% end  %>
     <div class="container" data-behavior="vue">
       
       <%= yield %>

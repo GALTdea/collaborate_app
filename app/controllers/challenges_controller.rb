@@ -24,7 +24,9 @@ class ChallengesController < ApplicationController
   # POST /challenges
   # POST /challenges.json
   def create
-    @challenge = Challenge.new(challenge_params)
+    # check difference between build and new, build might be more costly
+    @challenge = current_user.challenges.new(challenge_params)
+    # @post = current_user.posts.new(params[:post])
 
     respond_to do |format|
       if @challenge.save
