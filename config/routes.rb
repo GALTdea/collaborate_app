@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :entries
   resources :challenges
   resources :users
   root to: "pages#welcome"

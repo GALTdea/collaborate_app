@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <input class="form-control form-control-lg mt-5" type="text" v-model="message.title" />
+    <input class="form-control form-control-lg mt-5" type="text" v-model="challenge.title" />
     <br>
     <br>
     <AddEntry v-on:add-entry="addEntry" />
-    <Message v-bind:message="message"  />
+    <Challenge v-bind:challenge="challenge"  />
     <br>
-    <button class="btn form-control btn-outline-secondary btn-block msg-btn" v-on:click="saveMessage">Save Message </button>
+    <button class="btn form-control btn-outline-secondary btn-block msg-btn" v-on:click="saveChallenge">Save Challenge </button>
   </div>
 </template>
 
 <script>
-import Message from 'Message';
+import Challenge from 'Challenge';
 import AddEntry from 'AddEntry';
 // import VueResource from "vue-resource";
 
@@ -19,33 +19,33 @@ export default {
   name: 'app',
 
   components: {
-    Message,
+    Challenge,
     AddEntry,
   },
 
   data(){
       return {
-        message: {
+        challenge: {
           title: '',
           entries_attributes: [ ]
         }
 
       }
-      console.log(message)
+      console.log(challenge)
   },
 
   methods: {
     addEntry: function(newEntry) {
       const { entry } = newEntry;
         
-        this.message.entries_attributes.push( newEntry)
+        this.challenge.entries_attributes.push( newEntry )
         
       },
     
-    saveMessage: function(){
-      // const { message } = newMessage;
-      this.$http.post('/messages', { message: this.message }).then(response => {
-        Turbolinks.visit(`messages/${response.body.id}`)
+    saveChallenge: function(){
+      
+      this.$http.post('/challenges', { challenge: this.challenge }).then(response => {
+        Turbolinks.visit(`challenges/${response.body.id}`)
       }, response => {
         console.log(response)
       })

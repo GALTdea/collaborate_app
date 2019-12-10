@@ -1,7 +1,7 @@
 <template>
   <!-- had add an additional parent div to debog  -->
   <div>
-    <div v-bind:key="entry.id" v-for="entry in message.entries_attributes"  >
+    <div v-bind:key="entry.id" v-for="entry in challenge.entries_attributes"  >
       <!-- <Entry v-bind:entry="entry" /> -->
       <div class="listing-page">
         <ul class="mt-3 ml-1">
@@ -19,7 +19,7 @@
 <script>
 import Entry from './Entry';
 export default {
-  name: 'Message',
+  name: 'Challenge',
   
   components: {
     Entry,
@@ -27,12 +27,12 @@ export default {
 
   
 
-  props: [ "entry", "message"],
+  props: [ "entry", "challenge"],
 
   methods: {
 
     consoleLog: function(){
-      console.log(message)
+      console.log(challenge)
     }
     //   addEntry: function() {
     //     this.message.entry.push({

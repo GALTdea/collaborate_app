@@ -1,6 +1,6 @@
 class ChallengesController < ApplicationController
   before_action :set_challenge, only: [:show, :edit, :update, :destroy]
-
+  skip_before_action :verify_authenticity_token
   # GET /challenges
   # GET /challenges.json
   def index
@@ -69,6 +69,6 @@ class ChallengesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def challenge_params
-      params.require(:challenge).permit(:title, :completed, :user_id)
+      params.require(:challenge).permit(:title, :completed, :user_id,entries_attributes: [:id, :title ])
     end
 end
