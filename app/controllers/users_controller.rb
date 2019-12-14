@@ -12,6 +12,8 @@ class UsersController < ApplicationController
   def show
     @challenges = @user.challenges.all
     @challenge =  Challenge.last
+
+    
     
   end
 
