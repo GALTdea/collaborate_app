@@ -6,8 +6,13 @@
 </p>
 
 <p>
-  <strong>Completed:</strong>
-  <%= @challenge.completed %>
+  <strong>Entry first</strong>
+  <%= @challenge.entries.first.title %>
+</p>
+
+<p>
+  <strong>Entry Last</strong>
+  <%= @challenge.entries.last.title %>
 </p>
 
 <p>
