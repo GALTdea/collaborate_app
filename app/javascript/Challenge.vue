@@ -1,6 +1,6 @@
 <template>
   <!-- had add an additional parent div to debog  -->
-  <div>
+  <div class="challenge-form p-1">
     <div v-bind:key="entry.id" v-for="entry in challenge.entries_attributes"  >
       <!-- <Entry v-bind:entry="entry" /> -->
       <div class="listing-page">

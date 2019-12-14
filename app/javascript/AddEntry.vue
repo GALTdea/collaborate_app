@@ -1,14 +1,14 @@
 <template>
-  <div>
+  <div class=" entry-form" >
     <form autocomplete="off" @submit.prevent="addEntry" >
-      <div class="row">
+      <!-- <div class="row"> -->
         <div class=" entry-input d-inline p-2">
-          <input class="form-control form-control-lg d-inline p-2 " type="text" v-model="title" name="title" placeholder="Add Entry..." >
+          <input class="form-control form-control-lg " type="text" v-model="title" name="title" placeholder="Add Entry..." >
         </div>
         <div class=" d-inline p-2  .btn-entry">
           <button class="btn btn-outline-secondary d-inline p-2 " >Add Entry</button>
         </div>
-      </div> 
+      <!-- </div>  -->
     </form>
   </div>
 </template>

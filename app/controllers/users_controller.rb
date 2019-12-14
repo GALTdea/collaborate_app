@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @challenges = @user.challenges.all
+    @challenge =  Challenge.last
     
   end
 

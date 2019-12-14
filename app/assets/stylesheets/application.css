@@ -14,3 +14,8 @@
  *= require_self
  *= require bootstrap/scss/bootstrap
  */
+
+.fill { 
+    min-width:  100%;
+    height: 100%;
+}

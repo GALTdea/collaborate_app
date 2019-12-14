@@ -1,13 +1,20 @@
 <template>
-  <div id="app">
-    <input class="form-control form-control-lg mt-5" type="text" v-model="challenge.title" />
-    <br>
-    <br>
+  <div id="app  w-100 p-3">
+    <div class=" challenge-form-container">
+      <input class=" w-98 pt-1 pl-1 pr-1 propped-challenge form-control" type="text" v-model="challenge.title"
+      placeholder=""
+       />
+    </div>
+   
     <AddEntry v-on:add-entry="addEntry" />
     <Challenge v-bind:challenge="challenge"  />
-    <br>
+   
     <button class="btn form-control btn-outline-secondary btn-block msg-btn" v-on:click="saveChallenge">Save Challenge </button>
+
+ 
+   <!-- <div> Title from controller: {{title_controller}} </div> -->
   </div>
+
 </template>
 
 <script>
@@ -23,20 +30,36 @@ export default {
     AddEntry,
   },
 
+  props: ['mytitle'] ,
+
   data(){
       return {
-        challenge: {
-          title: '',
-          entries_attributes: [ ]
+        challenge:{
+            title: this.mytitle,
+            entries_attributes: [ ]
+          }
         }
 
-      }
-      console.log(challenge)
+      
+      
   },
 
+  
+
+  
   methods: {
+
+    // updateTitle: function() {
+    //   this.challenge.title = 'updated'
+      
+    //   console.log(this.$el.textContent)  // =>'not updated'
+    //   this.$nextTick(function () {
+    //     console.log(this.$el.textContent) // => 'updated'
+    //   })
+    // },
+
     addEntry: function(newEntry) {
-      const { entry } = newEntry;
+      
         
         this.challenge.entries_attributes.push( newEntry )
         
