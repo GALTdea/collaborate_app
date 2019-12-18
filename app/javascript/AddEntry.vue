@@ -48,29 +48,6 @@ export default {
 
 
 
-
-
-
-
-.entry-input {
-  border-top: none !important;
-  border-left: none !important;
-  border-right: none !important;
-  border-bottom: 2px solid grey;
-
-  padding-bottom: 0px !important;
-  padding-top: 0px !important;
-
-  border-radius: 0;
-  
-  width: 100% !important;
-  outline: none;
-  /*opacity: 1.0;*/
-  /*font-weight: 100;*/
-  
-}
-
-
 .entry-input:focus {
   border-top: none !important;
   border-left: none !important;
