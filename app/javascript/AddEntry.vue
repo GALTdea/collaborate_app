@@ -1,13 +1,12 @@
 <template>
-  <div class=" entry-form" >
+  <div class=" entry-form " >
     <form autocomplete="off" @submit.prevent="addEntry" >
       <!-- <div class="row"> -->
-        <div class=" entry-input d-inline p-2">
-          <input class="form-control form-control-lg " type="text" v-model="title" name="title" placeholder="Add Entry..." >
+        <div class=" d-inline ">
+          <input  class="entry-input form-control form-control" type="text" v-model="title" name="title" placeholder="Add Entry..." autocomplete="off" >
         </div>
-        <div class=" d-inline p-2  .btn-entry">
-          <button class="btn btn-outline-secondary d-inline p-2 " >Add Entry</button>
-        </div>
+          <button class=" entry-btn btn btn-outline-danger btn-outline-secondary btn-sm d-inline p-2  float-right" >Add Entry</button>
+       
       <!-- </div>  -->
     </form>
   </div>
@@ -45,17 +44,63 @@ export default {
 </script>
 
 <style scoped>
-p {
-  font-size: 2em;
-  text-align: center;
+
+
+
+
+
+
+
+
+.entry-input {
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: 2px solid pink;
+
+  padding-bottom: 0px !important;
+  padding-top: 0px !important;
+
+  border-radius: 0;
+  
+  width: 100% !important;
+  outline: none;
+  /*opacity: 1.0;*/
+  /*font-weight: 100;*/
+  
 }
 
-.entry-input{
-  width: 90%;
+
+.entry-input:focus {
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: 2px solid grey;
+  width: 100% !important;
+  padding-bottom: 0px !important;
+  padding-top: 0px !important;
+  
+  outline: none !important;
+  opacity: 1.0;
+  font-weight: 100;
+
+  transition: none !important;
+  
 }
+ 
+   
+.entry-btn{
+    border: none !important;
+}
+
+
+
 .btn-entry{
   width: 5%;
 }
+
+
+
 </style>
 
 <!-- this.team.players_attributes.push({

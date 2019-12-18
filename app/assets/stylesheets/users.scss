@@ -17,13 +17,6 @@ body {
 
 
 
-.propped-challenge {
-    width: 98% !important;
-    margin-left: .25rem;
-    margin-top : .5rem;
-   
-
-}
 
 .propped-challenge-container{
     background-color: rgba(0, 0, 0, 0.03);
@@ -33,14 +26,20 @@ body {
 }
 
 .challenge-form{
-    background-color: rgba(0, 0, 0, 0.03);
+    /*background-color: rgba(0, 0, 0, 0.03);*/
 }
 
 .challenge-form-container{
-    background-color: rgba(0, 0, 0, 0.03);
-    height: 6em;
+    /*background-color: rgba(0, 0, 0, 0.03);*/
+    height: 3em;
 }
 
+
+ .propped-challenge {
+    margin-top: 0rem;
+    border:     none !important;
+    background-color: rgba(0, 0, 0, 0.03) !important;
+}
 
 
 

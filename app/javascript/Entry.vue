@@ -1,5 +1,5 @@
 <template>
-  <div class="entry-item">
+  <div class=" entry-item">
     
      {{entry.title}}
      <button class="del">x</button>
