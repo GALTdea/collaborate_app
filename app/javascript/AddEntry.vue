@@ -3,7 +3,7 @@
     <form autocomplete="off" @submit.prevent="addEntry" >
       <!-- <div class="row"> -->
         <div class=" d-inline ">
-          <input  class="entry-input form-control form-control" type="text" v-model="title" name="title" placeholder="Add Entry..." autocomplete="off" >
+          <input autofocus  class="entry-input form-control form-control" type="text" v-model="title" name="title" placeholder="Add Entry..." autocomplete="off" >
         </div>
           <button class=" entry-btn btn btn-outline-danger btn-outline-secondary btn-sm d-inline p-2  float-right" >Add Entry</button>
        
@@ -56,7 +56,7 @@ export default {
   border-top: none !important;
   border-left: none !important;
   border-right: none !important;
-  border-bottom: 2px solid pink;
+  border-bottom: 2px solid grey;
 
   padding-bottom: 0px !important;
   padding-top: 0px !important;
