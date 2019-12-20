@@ -63,3 +63,21 @@ body {
   
 }
 
+
+.entry-input:focus {
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: 2px solid grey;
+  width: 100% !important;
+  padding-bottom: 0px !important;
+  padding-top: 0px !important;
+  
+  outline: none !important;
+  opacity: 1.0;
+  font-weight: 100;
+
+  transition: none !important;
+  
+}
+

@@ -1,14 +1,20 @@
 <template>
-  <div id="app  w-100 p-3">
-    
+  <div id="app  w-100 p-3  ">
+
+   <span class="timer float-right">{{ countDown }}</span> 
+    <div class="prompter1 ">
       <input style="" class="  w-98 pt-1 pl-1 pr-1 propped-challenge form-control" type="text" v-model="challenge.title"
       placeholder=""
        />
+      <AddEntry  v-on:add-entry="addEntry" />
+      <Challenge v-bind:challenge="challenge"  />
+    </div>
     
-   
-    <AddEntry v-on:add-entry="addEntry" />
-    <Challenge v-bind:challenge="challenge"  />
-   
+
+    <span class="prompter2 align-middle text-center" v-if="!isActive"  v-on:click="activate" >
+      <h1>click here to get started</h1>
+    </span>
+
     <button class="btn form-control btn-outline-secondary btn-block msg-btn" v-on:click="saveChallenge">Save Challenge </button>
   </div>
   
@@ -32,35 +38,35 @@ export default {
 
   data(){
       return {
+        // counter: 0,
+        isActive: false,
+        countDown : 100,
         challenge:{
             title: this.mytitle,
             entries_attributes: [ ]
           }
-        }
-
-      
-      
+        }    
   },
 
-  
-
-  
   methods: {
+    countDownTimer: function() {
+      if(this.countDown > 0) {
+          setTimeout(() => {
+              this.countDown -= 1
+              this.countDownTimer()
+          }, 1000)
+      }
+    },
 
-    // updateTitle: function() {
-    //   this.challenge.title = 'updated'
-      
-    //   console.log(this.$el.textContent)  // =>'not updated'
-    //   this.$nextTick(function () {
-    //     console.log(this.$el.textContent) // => 'updated'
-    //   })
-    // },
+    activate: function(){
+      this.countDownTimer()
+      this.isActive = !this.isActive
 
-    addEntry: function(newEntry) {
-      
-        
+    },
+            
+
+    addEntry: function(newEntry) { 
         this.challenge.entries_attributes.push( newEntry )
-        
       },
     
     saveChallenge: function(){
@@ -72,7 +78,12 @@ export default {
       })
 
     }
-  }
+  },
+
+  // created: {
+          // this.countDownTimer()
+  // }
+
 }
 </script>
 
@@ -111,6 +122,37 @@ input:focus, input.form-control:focus {
 
 }
 
+.app{
+  position:relative;
+}
+
+.prompter1 {
+    height: 400px;
+    /*background: black; */
+    position:relative;
+
+}
+
+.prompter2 {
+    height: 6em;
+    width:100%;
+    background-color: rgb(206, 232, 235, .5);    
+    color: rgb(06, 109, 110, .5);    
+    position:absolute;
+    top:0;
+}
+
+
+.timer{
+  color: red;
+}
+
+
+/*.container{
+    height: 800px;
+    background-color: blue;
+    z-index: 20;
+}*/
 
 </style>
 

@@ -31,4 +31,5 @@ document.addEventListener('turbolinks:load', () => {
   const app = new Vue({
     el: '[data-behavior="vue"]',
   })
+  console.log(app.countDown)
 })
