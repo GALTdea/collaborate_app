@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @challenge.title %>
+</p>
+
+<p>
+  <strong>Entry first</strong>
+  <%= @challenge.entries.first.title %>
+</p>
+
+<p>
+  <strong>Entry Last</strong>
+  <%= @challenge.entries.last.title %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @challenge.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_challenge_path(@challenge) %> |
+<%= link_to 'Back', challenges_path %>

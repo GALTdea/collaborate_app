@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CollaborateApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if current_user %>
+      <%= render 'shared/user_navbar' %>
+      <%= current_user.email %>
+    <% else  %>
+      <%= render 'shared/navbar' %>
+
+    <% end  %>
+    <div class="" data-behavior="vue">
+      
+      <%= yield %>
+    </div>
+  </body>
+</html>
