@@ -45,5 +45,67 @@ body {
 
 
 
+/* from  app.vue */
+
+/*input:focus, input.form-control:focus {
+
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+*/
+
+
+.propped-challenge {
+    width: 100% !important;
+    /*margin-left: .25rem;*/
+    /*margin-top : .5rem;*/
+   
+
+}
+
+
+.msg-btn{
+    border: none !important;
+    margin-top: 0em;
+    margin-bottom: 0px;
+}
+.msg-btn:hover{
+    border: none !important;
+    margin-top: 0em;
+    background-color: rgba(0, 0, 0, 0.03) !important;
+    color: grey;
+
+}
+
+.app{
+  position:relative;
+}
+
+.prompter1 {
+    height: 400px;
+    /*background: black; */
+    position:relative;
+
+}
+
+.prompter2 {
+    height: 6em;
+    width:100%;
+    background-color: rgba(206, 232, 235, .5);    
+    color: rgba(06, 109, 110, .5);    
+    position:absolute;
+    top:0;
+}
+
+
+.timer{
+  color: red;
+}
+
+
+/*from add entry*/
 
 
