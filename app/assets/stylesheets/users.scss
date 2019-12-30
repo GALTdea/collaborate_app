@@ -124,12 +124,12 @@ body {
   border-top: none !important;
   border-left: none !important;
   border-right: none !important;
-  border-bottom: 2px solid grey;
+  border-bottom: 2px solid grey !important;
 
   padding-bottom: 0px !important;
   padding-top: 0px !important;
 
-  border-radius: 0;
+  border-radius: 0 !important;
   
   width: 100% !important;
   outline: none;
