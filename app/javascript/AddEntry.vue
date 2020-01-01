@@ -2,7 +2,7 @@
   <div class=" entry-form " >
     <form autocomplete="off" @submit.prevent="addEntry" >
         <div class="  ">
-          <input autofocus   class="entry-input form-control form-control" type="text"  v-model="title" name="title" placeholder="Add Entry..." autocomplete="off" >
+          <input autofocus   class="entry-input form-control form-control" type="text"  v-on:click="activate" v-model="title" name="title" placeholder="type entry here..." autocomplete="off" >
         </div>
           <button class=" entry-btn btn btn-outline-danger btn-outline-secondary btn-sm d-inline p-2  float-right" >Add Entry</button>
     </form>
@@ -14,7 +14,8 @@ export default {
   name: 'AddEntry',
   data() {
     return {
-      title: ''
+      title: '', 
+      active: true
     }
   }, 
 
@@ -26,6 +27,14 @@ export default {
       }
       this.$emit('add-entry', newEntry);
       this.title = ""
+    },
+
+    activate: function() {
+      const activation = { active: this.active }
+      this.$emit('activate-challenge', activation);
+      // this.active =  !this.active
+      // console.log(this.active)
+
     }
   }
 }

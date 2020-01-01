@@ -5,12 +5,12 @@
       <input style="" class="  w-98 pt-1 pl-1 pr-1 propped-challenge form-control" type="text" v-model="challenge.title"
       placeholder=""
        />
-      <AddEntry  v-on:add-entry="addEntry" />
+      <AddEntry  v-on:add-entry="addEntry" v-on:activate-challenge="activating" />
       <Challenge v-bind:challenge="challenge"  />
     </div>
-    <span class="prompter2 align-middle text-center" v-if="!isActive"  v-on:click="activate" >
-      <h1>click here to get started</h1>
-    </span>
+    <!-- <span class="prompter2 align-middle text-center" v-if="!isActive"   >
+      <h1 class="prompter-h1" >click here to get started</h1>
+    </span> -->
   
     <button class="btn form-control btn-outline-secondary btn-block msg-btn" v-on:click="saveChallenge">Save Challenge </button>
   </div>
@@ -55,7 +55,7 @@ export default {
       }
     },
 
-    activate: function(){
+    activating: function(){
       this.countDownTimer()
       this.isActive = !this.isActive
 
