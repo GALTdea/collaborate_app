@@ -157,6 +157,11 @@ body {
 }
 
 
+/* TO correcto a bootrap bugg that was giving links a black background I had overwrite it */
+
+.nav-link:hover {
+  background-color: #f8f9fa !important;
+}
 /*from add entry*/
 
 

@@ -1,4 +1,19 @@
 
+<div class="pos-f-t">
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+      <h5 class="text-white h4">Collapsed content</h5>
+      <span class="text-muted">Toggleable via the navbar brand.</span>
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+</div>
+
+
 <p id="notice"><%= notice %></p>
 <div class="container gedf-wrapper">
     <div class="row">
@@ -6,11 +21,10 @@
           <div class="user-card">
             <div class="card card-body ml-0">
                 <div class="h5"> @LeeCross </div>
-                
                 <div>
                     <p>
-                      <strong>Name:</strong>
-                      <%= @user.name %>
+                      <strong>email:</strong><br>
+                      <%= @user.email %>
                     </p> 
                 </div>
 
@@ -31,8 +45,8 @@
                     <div class="h5"><%= @challenges.count %></div>
                 </li>
                 <li class="list-group-item">
-                    <div class="h6 text-muted">Following</div>
-                    <div class="h5">6758</div>
+                    <div class="h6 text-muted">Missed Challenges</div>
+                    <div class="h5">5</div>
                 </li>
                 <li class="list-group-item">Vestibulum at eros</li>
             </ul>
