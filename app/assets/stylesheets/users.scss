@@ -132,7 +132,7 @@ body {
   border-radius: 0 !important;
   
   width: 100% !important;
-  outline: none;
+  outline: none !important;
   /*opacity: 1.0;*/
   /*font-weight: 100;*/
   
@@ -143,16 +143,17 @@ body {
   border-top: none !important;
   border-left: none !important;
   border-right: none !important;
-  border-bottom: 2px solid grey;
-  width: 100% !important;
+  border-bottom: 2px solid grey !important;
+
   padding-bottom: 0px !important;
   padding-top: 0px !important;
+
+  border-radius: 0 !important;
   
-  outline: none !important;
+  width: 100% !important;
+ outline: none !important;
   /*opacity: 1.0;*/
   /*font-weight: 100;*/
-
-  transition: none !important;
   
 }
 
