@@ -20,7 +20,7 @@ body {
 
 
 .challenge-component-container{
-  height: 15em;
+  max-height: 15em;
 }
 
 
@@ -37,7 +37,7 @@ body {
 
 .challenge-form-container{
     /*background-color: rgba(0, 0, 0, 0.03);*/
-    height: 3em;
+    height: 1em;
 }
 
 
@@ -75,7 +75,10 @@ body {
     border: none !important;
     margin-top: 0em;
     margin-bottom: 0px;
+
+  
 }
+
 .msg-btn:hover{
     border: none !important;
     margin-top: 0em;
@@ -89,9 +92,9 @@ body {
 }
 
 .prompter1 {
-    height: 400px;
+    /*height: 300px;*/
     /*background: black; */
-    position:relative;
+    /*position:relative;*/
 
 }
 

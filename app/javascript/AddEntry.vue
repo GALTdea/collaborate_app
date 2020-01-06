@@ -4,7 +4,7 @@
         <div class="  ">
           <input autofocus   class="entry-input form-control form-control" type="text"  v-on:keyup.once="activate" v-model="title" name="title" placeholder="type entry here..." autocomplete="off" >
         </div>
-          <button class=" entry-btn btn btn-outline-danger btn-outline-secondary btn-sm d-inline p-2  float-right" >Add Entry</button>
+          <button class="d-flex justify-content-start entry-btn btn btn-outline-danger btn-outline-secondary btn-sm d-inline p-2  float-right" >Add Entry</button>
     </form>
   </div>
 </template>
