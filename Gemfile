@@ -25,6 +25,11 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# updated rack per github recomendation
+#https://github.com/GALTdea/collaborate_app/network/alert/Gemfile.lock/rack/open
+# gem 'rack', '~> 2.0', '>= 2.0.8'
+
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
