@@ -2,6 +2,7 @@
   <div class="overflow-auto" >
    <span class="timer float-right">{{ countDown }}</span> 
    <span> Entries Submited: <span class="timer ">{{ challengeCount }}</span> </span> 
+
       <input style="" class="  w-98 pt-1 pl-1 pr-1 propped-challenge form-control" type="text" v-model="challenge.title"
       placeholder=""
        />
@@ -27,13 +28,14 @@ export default {
     AddEntry,
   },
 
-  props: ['mytitle'] ,
+  props: ['mytitle', 'user'] ,
 
   data(){
       return {
         challengeCount: 0,
         isActive: false,
         countDown : 100,
+        currentUser: 2,
         challenge:{
             title: this.mytitle,
             entries_attributes: [ ]
@@ -59,18 +61,19 @@ export default {
             
 
     addEntry: function(newEntry) { 
-
         this.challenge.entries_attributes.push( newEntry )
         this.challengeCount = this.challenge.entries_attributes.length
-        console.log(this.challenge.entries_attributes.length)
+        // console.log(this.challenge.entries_attributes.length)
       },
     
     saveChallenge: function(){
-      
+     const user = this.user
       this.$http.post('/challenges', { challenge: this.challenge }).then(response => {
-        Turbolinks.visit(`challenges/${response.body.id}`)
+        // success callback 
+        Turbolinks.visit(user)
+        console.log(response.body.id)
       }, response => {
-        console.log(response)
+        // error call back goes here
       })
 
     }
