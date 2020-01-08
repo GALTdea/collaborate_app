@@ -16,6 +16,24 @@
  
  */
 
+
+/* TO correcto a bootrap bugg that was giving links a black background I had overwrite it */
+
+a:hover {
+  background-color:transparent !important;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
+a {
+  text-decoration: none !important;
+  color: #666  !important;
+}
+
+
+
  
 /*@import "~rfs/scss";*/
 @import "../node_modules/rfs/sass";
