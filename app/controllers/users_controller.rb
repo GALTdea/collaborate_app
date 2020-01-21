@@ -10,9 +10,11 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    
     @challenges = @user.challenges.all
     @challenge =  Challenge.last
     @completed_challenges = current_user.challenges
+    @completed_daily_posts = current_user.daily_posts
 
     
     

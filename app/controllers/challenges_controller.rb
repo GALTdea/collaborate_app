@@ -27,9 +27,7 @@ class ChallengesController < ApplicationController
   # POST /challenges
   # POST /challenges.json
   def create
-    # check difference between build and new, build might be more costly
     @challenge = current_user.challenges.new(challenge_params)
-    # @post = current_user.posts.new(params[:post])
 
     respond_to do |format|
       if @challenge.save
@@ -74,6 +72,8 @@ class ChallengesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def challenge_params
-      params.require(:challenge).permit(:title, :completed, :user_id,entries_attributes: [:id, :title ])
+      params.require(:challenge).permit(:title, :completed, :user_id, entries_attributes: [:id, :title ])
+
     end
+    
 end

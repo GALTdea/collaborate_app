@@ -3,11 +3,11 @@
    <span class="timer float-right">{{ countDown }}</span> 
    <span> Entries Submited: <span class="timer ">{{ challengeCount }}</span> </span> 
 
-      <input style="" class="  w-98 pt-1 pl-1 pr-1 propped-challenge form-control" type="text" v-model="challenge.title"
+      <input style="" class="  w-98 pt-1 pl-1 pr-1 propped-challenge form-control" type="text" v-model="mytitle"
       placeholder=""
        />
       <AddEntry  v-on:add-entry="addEntry" v-on:activate-challenge="activating" />
-       <Challenge class="" v-bind:challenge="challenge"  />
+       <Challenge class="" v-bind:dailyPost="dailyPost"  />
 
        <button class="  btn-outline-secondary btn-block msg-btn" v-on:click="saveChallenge">Save Challenge </button>  
   </div>
@@ -18,7 +18,7 @@
 <script>
 import Challenge from 'Challenge';
 import AddEntry from 'AddEntry';
-// import VueResource from "vue-resource";
+import VueResource from "vue-resource";
 
 export default {
   name: 'app',
@@ -28,7 +28,7 @@ export default {
     AddEntry,
   },
 
-  props: ['mytitle', 'user'] ,
+  props: ['mytitle', 'user'] , 
 
   data(){
       return {
@@ -36,11 +36,17 @@ export default {
         isActive: false,
         countDown : 100,
         currentUser: 2,
-        challenge:{
-            title: this.mytitle,
-            entries_attributes: [ ]
-          }
-        }    
+        
+        dailyPost:{
+          title: this.mytitle,
+          entries_attributes: [ ]
+        },
+
+        // challenge:{
+        //     title: this.mytitle,
+        //     entries_attributes: [ ]
+        // }
+      }    
   },
 
   methods: {
@@ -61,22 +67,33 @@ export default {
             
 
     addEntry: function(newEntry) { 
-        this.challenge.entries_attributes.push( newEntry )
-        this.challengeCount = this.challenge.entries_attributes.length
-        // console.log(this.challenge.entries_attributes.length)
+        this.dailyPost.entries_attributes.push( newEntry )
+        this.challengeCount = this.dailyPost.entries_attributes.length
+        console.log(this.dailyPost.entries_attributes)
       },
     
     saveChallenge: function(){
-     const user = this.user
-      this.$http.post('/challenges', { challenge: this.challenge }).then(response => {
+      const user = this.user
+      
+      this.$http.post('/daily_posts', { daily_post: this.dailyPost }).then(response => {
         // success callback 
         Turbolinks.visit(user)
-        console.log(response.body.id)
+        console.log(response.body)
       }, response => {
         // error call back goes here
+        console.log(response.body.id)
       })
 
+         //  this.$http.post('/challenges', { challenge: this.challenge }).then(response => {
+         // // success callback 
+         //  Turbolinks.visit(user)
+         //  console.log(response.body.id)
+         //  }, response => {
+         //    // error call back goes here
+         //    console.log(response.body.id)
+         //  }
     }
+
   },
 
   // created: {
@@ -207,5 +224,14 @@ input:focus, input.form-control:focus {
 
 
 
+<!-- 
+         //  this.$http.post('/challenges', { challenge: this.challenge }).then(response => {
+         //    // success callback 
+         //    Turbolinks.visit(user)
+         //    console.log(response.body.id)
+         //  }, response => {
+         //    // error call back goes here
+         //  }) -->
 
+        
 

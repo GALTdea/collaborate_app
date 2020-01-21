@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_10_010518) do
+ActiveRecord::Schema.define(version: 2020_01_20_045941) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,12 +24,21 @@ ActiveRecord::Schema.define(version: 2019_12_10_010518) do
     t.index ["user_id"], name: "index_challenges_on_user_id"
   end
 
-  create_table "entries", force: :cascade do |t|
-    t.text "title"
-    t.bigint "challenge_id", null: false
+  create_table "daily_posts", force: :cascade do |t|
+    t.string "title"
+    t.boolean "completed"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["challenge_id"], name: "index_entries_on_challenge_id"
+    t.index ["user_id"], name: "index_daily_posts_on_user_id"
+  end
+
+  create_table "entries", force: :cascade do |t|
+    t.text "title"
+    t.bigint "user_id"
+    t.bigint "daily_post_id", null: false
+    t.index ["daily_post_id"], name: "index_entries_on_daily_post_id"
+    t.index ["user_id"], name: "index_entries_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -46,5 +55,7 @@ ActiveRecord::Schema.define(version: 2019_12_10_010518) do
   end
 
   add_foreign_key "challenges", "users"
-  add_foreign_key "entries", "challenges"
+  add_foreign_key "daily_posts", "users"
+  add_foreign_key "entries", "daily_posts"
+  add_foreign_key "entries", "users"
 end

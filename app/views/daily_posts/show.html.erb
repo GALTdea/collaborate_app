@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @daily_post.title %>
+</p>
+
+<p>
+  <strong>Completed:</strong>
+  <%= @daily_post.completed %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @daily_post.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_daily_post_path(@daily_post) %> |
+<%= link_to 'Back', daily_posts_path %>

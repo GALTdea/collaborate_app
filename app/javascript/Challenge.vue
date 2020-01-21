@@ -1,6 +1,6 @@
 <template >
   <div class="challenge-form overflow-auto">
-    <div v-bind:key="entry.id" v-for="entry in challenge.entries_attributes"  >
+    <div v-bind:key="entry.id" v-for="entry in dailyPost.entries_attributes"  >
       <div class="listing-page overflow-auto">
         <ol class="mt-3 ">
           <li >
@@ -23,7 +23,7 @@ export default {
 
   
 
-  props: [ "entry", "challenge"],
+  props: [ "entry", "dailyPost"],
 
   methods: {
 

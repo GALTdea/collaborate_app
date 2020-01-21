@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :daily_posts
   devise_for :users
   resources :entries
   resources :challenges

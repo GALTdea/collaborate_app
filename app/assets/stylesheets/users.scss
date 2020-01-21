@@ -9,7 +9,7 @@ body {
         }
 
 .h7 {
-    font-size: 0.8rem;
+    font-size: 0.5rem;
 }
 
 
@@ -186,6 +186,23 @@ a:hover {
 a {
   text-decoration: none !important;
   color: #666  !important;
+}
+
+
+
+
+
+/* Completed Challenges Card */
+
+/*.completed-card{
+    padding: 0.55rem 1rem  !important;
+    background-color: rgba(0, 0, 0, 0.03)  !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.125)   !important;
+}*/
+
+.completed-card-footer {
+   padding: 0.45rem .75rem  !important;
+  font-size: .8em !important;
 }
 
 
